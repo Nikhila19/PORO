@@ -7,6 +7,7 @@ ARGF.read.each_with_index do |line, idx|
 end
 
 result = []
+# just adding some chnages to commit into git
 
 input_strings.each do |s|
     input = s.half_split
