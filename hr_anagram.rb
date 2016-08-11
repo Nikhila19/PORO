@@ -1,4 +1,8 @@
-
+# The problem statement is on HackerRank https://www.hackerrank.com/challenges/anagram
+# Basically, this solves the question of 'how many characters should 
+# i change in given 2 strings to make them anagrams of each other'
+# My approach is to use a frequency hash of the given strings and 
+# do a hash_difference of those frequency hashes
 
 class String
     def anagram?(str1="")
@@ -20,19 +24,8 @@ class Hash
         self.each do |k,v|
             if self[k] > (h[k] || 0)
               res[k] =  self[k] - (h[k] || 0)
-            end
-            # if h[k] && h[k] > self[k]
-            #     res[k] =  h[k] - v
-            # elsif h[k] && h[k] < v
-            #     res[k] = v - h[k]
-            # elsif h[k] && h[k] == v
-            # else
-            #     res[k] = self[k]
-            # end            
+            end       
         end
-        # h.each do |k,v|
-        #     res[k] = v unless self[k]
-        # end
         res
     end
 end
@@ -47,13 +40,9 @@ ARGF.each_line do |line|
         input_strings << line.chomp.to_s
     end
 end
-# puts "input strings = #{input_strings}"
-# puts "num of lines = #{num_lines}"
 result = []
-# just adding some changes to commit into git
 
 input_strings.each do |s|
-    puts s
     input = s.half_split
     if input.first.nil? or s.length.odd?
         result << -1
@@ -65,9 +54,8 @@ input_strings.each do |s|
 
         hash_diff = h1.diff(h2).values
         result << hash_diff.inject(0) { |res, ele| res += ele; res }
-        # puts "result= #{result}"
         result
     end
     result
 end
-puts "results are: #{result}"
+print result
