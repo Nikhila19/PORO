@@ -1,5 +1,4 @@
 def make_change(amt, coins, index, memo)
-
   if memo[amt][index] > 0
     puts "************* I already know that memo[#{amt}][#{index}] = #{memo[amt][index]}"
     return memo[amt][index] 
@@ -29,13 +28,16 @@ def make_change(amt, coins, index, memo)
 end
 
 def compute_change(n, coins)
-  memo = []
-  for i in 0..n do 
-    memo[i] = []
-    for j in 0..coins.length-1
-      memo[i][j] = 0
-    end 
-  end
+  memo = Array.new(n+1, Array.new(coins.length, 0))
+
+  # memo = []
+  # for i in 0..n do 
+  #   memo[i] = []
+  #   for j in 0..coins.length-1
+  #     memo[i][j] = 0
+  #   end 
+  # end
+  # print memo
   make_change(n,coins, 0, memo)
 end
 
