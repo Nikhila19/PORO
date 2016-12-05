@@ -19,8 +19,25 @@ class Stack
     return n.value
   end
 
+  def peek
+    return nil if @top.nil?
+    return @top.value
+  end
+
   def empty?
     @top.nil?
+  end
+
+  def traverse
+    curr = @top
+    print "#{curr.value} -> " if curr
+    return unless curr
+
+    while(curr.next)
+      curr = curr.next
+      print "#{curr.value} -> "
+    end
+    puts ""
   end
 
 end
