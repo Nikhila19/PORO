@@ -4,11 +4,7 @@ class PowerSet
     return [[]] if stop-start < 0
 
     prev_result = subset(arr, start, stop-1)
-    curr_result = []
-    prev_result.each do |ele|
-      curr_result << ele + [arr[stop]]
-    end
-
+    curr_result = prev_result.map { |ele| ele + [arr[stop]] }
     return prev_result + curr_result
   end
 end
