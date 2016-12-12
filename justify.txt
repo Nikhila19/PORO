@@ -1,0 +1,7 @@
+This is a test file
+for experimenting with justification
+
+The program has to read this left justified file
+and output it right justified line by line
+
+This is going to be a loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong line 
